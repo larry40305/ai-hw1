@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}{% endblock title%}</title>
+    <link rel="icon" href="/static/image/icon.png">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        .form{
+          width: 800px;
+          margin: 50px auto;
+          border:dotted 5px rgb(0, 238, 255);
+          overflow: hidden; /* 避免長方框下面顯示不正常 */
+        }
+        .photo{
+          width: 300px;
+          float:left; /* 圖片在左邊 */
+          padding: 20px;
+        }
+        .photo img{
+          display: block;
+          width:100%;
+        }
+        .text{
+          float: right;  /* 文字在右邊 */
+          width: 430px;
+          padding: 20px 20px 0px 0px;
+        }
+    </style>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://127.0.0.1:5000">Larry</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="http://127.0.0.1:5000"><img src="/static/image/home.png" alt="Logo" width="25px"> 首頁</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about"><img src="/static/image/person.png" alt="Logo" width="25px"> 個人資料</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="education"><img src="/static/image/study.png" alt="Logo" width="25px"> 學歷</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="language"><img src="/static/image/language.png" alt="Logo" width="25px"> 語言能力</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="other"><img src="/static/image/link.png" alt="Logo" width="25px"> 其他</a>
+                    </li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </nav>
+    {% block message %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+    
+    
+</body>
+
+</html>
